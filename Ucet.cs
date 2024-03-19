@@ -12,7 +12,7 @@ namespace bankaprojekt
 
     internal class Ucet
     {
-
+        
         private int id;
         private string username;
         private string password;
@@ -26,13 +26,13 @@ namespace bankaprojekt
         public int Balance { get; set; }
         public string TypUctu { get; set; }
 
-        public Ucet(int id, string username, string password, int balance, string typUctu)
+        public Ucet(int id, string username, string password, int balance,string typUctu)
         {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-            this.balance = balance;
-            this.typUctu = typUctu;
+            this.ID = id;
+            this.Username = username;
+            this.Password = password;
+            this.Balance = balance;
+            this.TypUctu = typUctu;
         }
 
         public Ucet()
@@ -41,7 +41,7 @@ namespace bankaprojekt
 
         public override string? ToString()
         {
-            return username + ", password: " + password + ", balance: " + balance + ", typ uctu: " + typUctu;
+            return Username + ", password: " + Password + ", balance: " + Balance + ", typ uctu: " + TypUctu;
         }
 
         public void SaveToJson(string filePath)
