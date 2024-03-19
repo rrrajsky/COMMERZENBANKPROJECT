@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class Vklad
+    public class Transakce
     {
-        private int ID; 
-        
+        private int ID;
 
-        public Vklad(int id) {
+
+        public Transakce(int id)
+        {
             this.ID = id;
         }
-        public Vklad() { 
-        this.ID = 0;
+        public Transakce()
+        {
+            this.ID = 0;
         }
-       
+
         public Ucet vlozte(Ucet u1, int vloz)
         {
             u1.Balance = u1.Balance + vloz;
@@ -28,7 +30,7 @@ namespace ConsoleApp1
             u1.Balance = u1.Balance - vyber;
             return u1;
         }
-        public Ucet Prevod(Ucet u1 , Ucet u2, int prevod)
+        public Ucet Prevod(Ucet u1, Ucet u2, int prevod)
         {
             u2.Balance -= prevod;
             u1.Balance += prevod;
