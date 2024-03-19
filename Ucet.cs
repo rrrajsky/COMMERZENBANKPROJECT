@@ -1,13 +1,16 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace bankaprojekt
 {
-    public class Ucet
+
+    internal class Ucet
     {
 
         private int id;
@@ -23,13 +26,13 @@ namespace ConsoleApp1
         public int Balance { get; set; }
         public string TypUctu { get; set; }
 
-        public Ucet(int id, string username, string password, int balance,string typUctu)
+        public Ucet(int id, string username, string password, int balance, string typUctu)
         {
-            this.ID = id;
-            this.Username = username;
-            this.Password = password;
-            this.Balance = balance;
-            this.TypUctu = typUctu;
+            this.id = id;
+            this.username = username;
+            this.password = password;
+            this.balance = balance;
+            this.typUctu = typUctu;
         }
 
         public Ucet()
@@ -38,7 +41,29 @@ namespace ConsoleApp1
 
         public override string? ToString()
         {
-            return Username + ", password: " + Password + ", balance: " + Balance + ", typ uctu: " + TypUctu;
+            return username + ", password: " + password + ", balance: " + balance + ", typ uctu: " + typUctu;
+        }
+
+        public void SaveToJson(string filePath)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var jsonString = JsonSerializer.Serialize(this, options);
+            File.WriteAllText(filePath, jsonString);
+            
+        }
+
+     
+
+    public static Ucet ReadFromJson(string filePath)
+        {
+            var jsonString = File.ReadAllText(filePath);
+            return JsonSerializer.Deserialize<Ucet>(jsonString);
         }
     }
+
 }
+
