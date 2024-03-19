@@ -7,11 +7,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+          Vklad v = new Vklad();
             Console.WriteLine("Dobrý den, copak by jste dnes chtěl provésti");
-            Console.WriteLine("Vytvoreni Uzivatele:");
-            Console.WriteLine("Prevod:");
-            Console.WriteLine("Vklad:");
-            Console.WriteLine("Vyber:");
+            Console.WriteLine("1.Vytvoreni Uzivatele:");
+            Console.WriteLine("2.Prevod:");
+            Console.WriteLine("3.Vklad:");
+            Console.WriteLine("4.Vyber:");
             int age = Convert.ToInt32(Console.ReadLine());
             switch (age)
             {
@@ -30,11 +31,19 @@ namespace ConsoleApp1
                     Ucet u = new Ucet(id,userName,password,Balanace,typ);
                     Console.WriteLine(u);
                     long timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                    string filepath = $"ucet" + timestamp + ".json";
+                    string filepath = $"ucet" + id + ".json";
                     u.SaveToJson(filepath);
                     break;
                 case 2:
-                   
+                    Console.WriteLine("Prevod z uctu:");
+                    int zuctu = Convert.ToInt32(Console.ReadLine());
+                    Ucet u3 = new Ucet();
+                    Console.WriteLine("Prevod na ucet:");
+                    int docutu = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Kolik:");
+                    int kolik = Convert.ToInt32(Console.ReadLine());
+                    v.Prevod(zuctu, docutu,kolik);
+
                     break;
                 default:
                     Console.WriteLine("Spatny vyber");
