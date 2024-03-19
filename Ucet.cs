@@ -25,11 +25,11 @@ namespace ConsoleApp1
 
         public Ucet(int id, string username, string password, int balance,string typUctu)
         {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-            this.balance = balance;
-            this.typUctu = typUctu;
+            this.ID = id;
+            this.Username = username;
+            this.Password = password;
+            this.Balance = balance;
+            this.TypUctu = typUctu;
         }
 
         public Ucet()
@@ -38,8 +38,7 @@ namespace ConsoleApp1
 
         public override string? ToString()
         {
-            return username + ", password: " + password + ", balance: " + balance + ", typ uctu: " + typUctu;
+            return Username + ", password: " + Password + ", balance: " + Balance + ", typ uctu: " + TypUctu;
         }
-        
     }
 }
