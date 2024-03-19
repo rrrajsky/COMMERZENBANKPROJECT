@@ -35,5 +35,11 @@ namespace ConsoleApp1
         public Ucet()
         {
         }
+
+        public override string? ToString()
+        {
+            return username + ", password: " + password + ", balance: " + balance + ", typ uctu: " + typUctu;
+        }
+        
     }
 }
