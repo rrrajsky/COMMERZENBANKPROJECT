@@ -7,10 +7,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace bankaprojekt
+namespace ConsoleApp1
 {
 
-    internal class Ucet
+    public class Ucet
     {
         
         private int id;
