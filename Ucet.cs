@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Ucet
+    public class Ucet
     {
 
         private int id;
