@@ -14,16 +14,16 @@ namespace ConsoleApp1
         private string username;
         private string password;
         private int balance;
-        private TypUctu typUctu;
+        private string typUctu;
 
 
         public int ID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public int Balance { get; set; }
-        public TypUctu TypUctu { get; set; }
+        public string TypUctu { get; set; }
 
-        public Ucet(int id, string username, string password, int balance,TypUctu typUctu)
+        public Ucet(int id, string username, string password, int balance,string typUctu)
         {
             this.id = id;
             this.username = username;
